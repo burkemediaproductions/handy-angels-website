@@ -17,14 +17,18 @@
 	  document.body.classList.add('menu-open');
 
 	  const first = drawer?.querySelector('a,button');
-	  setTimeout(()=> first?.focus(), 60);
+	  setTimeout(() => first?.focus(), 180);
 	}
+
 	function closeDrawer(){
 	  if(!panel) return;
 	  panel.setAttribute('aria-hidden','true');
-	  document.body.style.overflow='';
-	  document.body.classList.remove('menu-open');
-	  if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+
+	  window.setTimeout(() => {
+		document.body.style.overflow='';
+		document.body.classList.remove('menu-open');
+		if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+	  }, 320);
 	}
 
   openBtn?.addEventListener('click', openDrawer);
