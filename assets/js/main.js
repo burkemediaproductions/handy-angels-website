@@ -147,3 +147,47 @@ document.querySelectorAll('.inline-video').forEach((video) => {
   window.addEventListener('scroll', requestUpdate, { passive:true });
   window.addEventListener('resize', requestUpdate);
 })();
+
+// Dynamic active nav state for desktop + mobile
+(function(){
+  function normalizePath(path){
+    if(!path) return '/';
+    let normalized = path.replace(/index\.html$/i, '');
+    normalized = normalized.replace(/\/+$/, '');
+    return normalized === '' ? '/' : normalized;
+  }
+
+  function getSectionKey(pathname){
+    const path = normalizePath(pathname);
+
+    if(path === '/') return '/';
+    if(path.startsWith('/services/')) return '/services/';
+    if(path.startsWith('/service-areas/')) return '/service-areas/';
+    if(path.startsWith('/about/')) return '/about/';
+    if(path.startsWith('/emergency/')) return '/emergency/';
+    if(path.startsWith('/contact/')) return '/contact/';
+
+    return path;
+  }
+
+  const currentKey = getSectionKey(window.location.pathname);
+
+  const navLinkSets = [
+    ...document.querySelectorAll('.site-header .nav a'),
+    ...document.querySelectorAll('.mobile-drawer nav a')
+  ];
+
+  navLinkSets.forEach((link) => {
+    link.removeAttribute('aria-current');
+
+    const href = link.getAttribute('href');
+    if(!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('http')) return;
+
+    const url = new URL(href, window.location.origin);
+    const linkKey = getSectionKey(url.pathname);
+
+    if(linkKey === currentKey){
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+})();
