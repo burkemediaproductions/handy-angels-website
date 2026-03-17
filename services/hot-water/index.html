@@ -20,8 +20,8 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="../../" aria-label="Handy Angels home">
-      <img src="../../assets/img/logo.png" alt="Handy Angels logo">
+    <a class="brand" href="/" aria-label="Handy Angels home">
+      <img src="/assets/img/logo.png" alt="Handy Angels logo">
       <span class="brand-text">
         <span class="brand-name">Handy Angels</span>
         <span class="brand-tag">Local help • Honest work • 24/7 emergency</span>
@@ -29,20 +29,27 @@
     </a>
 
     <nav class="nav" aria-label="Primary">
-      <a href="../../">Home</a>
-<a href="../../services/" aria-current="page">Services</a>
-<a href="../../service-areas/">Service Areas</a>
-<a href="../../about/">About</a>
-<a href="../../emergency/">Emergency</a>
-<a href="../../contact/">Contact</a>
+      <a href="/">Home</a>
+      <a href="/services/">Services</a>
+      <a href="/service-areas/">Areas We Serve</a>
+      <a href="/about/">About</a>
+      <a href="/emergency/">Emergency</a>
+      <a href="/contact/">Contact</a>
     </nav>
 
     <div class="header-actions">
-      <a class="btn btn-ghost" href="../../#request">Submit Request</a>
-      <a class="btn btn-primary" href="../../contact/">Call / Text</a>
-      <button class="icon-btn" type="button" aria-label="Open menu" data-mobile-open>
+      <a class="btn btn-ghost btn-request" href="/#request">Submit Request</a>
+
+      <a class="icon-call-btn" href="tel:1-442-400-4127" aria-label="Call Handy Angels at 442-400-4127">
+        <span class="icon-call-popover">442-400-4127</span>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.79.63 2.65a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.43-1.24a2 2 0 0 1 2.11-.45c.86.3 1.75.51 2.65.63A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <button class="icon-btn menu-btn" type="button" aria-label="Open menu" data-mobile-open>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
         </svg>
       </button>
     </div>
@@ -172,40 +179,42 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="../../" style="margin-bottom:10px;">
-          <img src="../../assets/img/logo.png" alt="Handy Angels logo">
+        <a class="brand" href="/" style="margin-bottom:10px;">
+          <img src="/assets/img/logo-white.png" alt="Handy Angels logo">
           <span class="brand-text">
             <span class="brand-name" style="color:#fff;">Handy Angels</span>
-            <span class="brand-tag">Guardian-level property help</span>
+            <span class="brand-tag" style="color:rgba(255,255,255,.6);">Guardian-level property help</span>
           </span>
         </a>
-        <p>Handy Angels connects trusted local contractors for repairs, maintenance, upgrades, and emergency property help across the Coachella Valley.</p>
+        <p>Handy Angels connects trusted local contractors for repairs, maintenance, upgrades, patio and pool support, and emergency property help across the Coachella Valley.</p>
         <p class="fine">© <span data-year></span> Handy Angels. All rights reserved.</p>
       </div>
 
       <div>
         <h3>Company</h3>
         <ul class="clean-list">
-          <li><a href="../../about/">About</a></li>
-          <li><a href="../../service-areas/">Service Areas</a></li>
-          <li><a href="../../contact/">Contact</a></li>
-          <li><a href="../../emergency/">Emergency</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/service-areas/">Service Areas</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/emergency/">Emergency</a></li>
         </ul>
       </div>
 
       <div>
         <h3>Services</h3>
         <ul class="clean-list">
-          <li><a href="../../services/handyman/">Handyman</a></li>
-          <li><a href="../../services/plumbing/">Plumbing</a></li>
-          <li><a href="../../services/electrical/">Electrical</a></li>
-          <li><a href="../../services/property-maintenance/">Property Maintenance</a></li>
+          <li><a href="/services/handyman/">Handyman</a></li>
+          <li><a href="/services/plumbing/">Plumbing</a></li>
+          <li><a href="/services/electrical/">Electrical</a></li>
+          <li><a href="/services/property-maintenance/">Property Maintenance</a></li>
+          <li><a href="/services/outdoor-patio/">Outdoor Patio</a></li>
+          <li><a href="/services/pool-services/">Pool Repairs</a></li>
         </ul>
       </div>
 
       <div>
         <h3>Partner Brands</h3>
-        <p class="help" style="color:rgba(255,255,255,.78);">Links can be pointed to the new sites later:</p>
+        <p class="help" style="color:rgba(255,255,255,.78);">Explore our trusted partner brands:</p>
         <ul class="clean-list">
           <li><a href="#">Colby Construction</a></li>
           <li><a href="#">Sproul Heating & Air</a></li>
@@ -214,7 +223,7 @@
       </div>
     </div>
 
-    <p class="fine">Built as a temporary static site with future ServiceUp integration in mind.</p>
+    <p class="fine">Built by <a href="https://burkemedia.pro" target="_blank" rel="noopener noreferrer" aria-label="Visit BurkeMedia Productions">BurkeMedia Productions</a> to deliver a fast, reliable experience for Handy Angels customers across the Coachella Valley.</p>
   </div>
 </footer>
 
