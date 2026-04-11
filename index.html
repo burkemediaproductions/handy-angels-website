@@ -371,7 +371,7 @@
             </div>
 
             <div class="card" style="padding:14px;">
-              <p style="margin:0;"><strong>SEO-friendly links:</strong> <a href="services/">Services</a> • <a href="services/handyman/">Handyman</a> • <a href="services/plumbing/">Plumbing</a> • <a href="services/electrical/">Electrical</a> • <a href="services/property-maintenance/">Maintenance</a> • <a href="services/outdoor-patio-pool-repair/">Patio &amp; Pool Repair</a> • <a href="services/pool-services/">Pool Services</a></p>
+              <p style="margin:0;"><a href="services/">Services</a> • <a href="services/handyman/">Handyman</a> • <a href="services/plumbing/">Plumbing</a> • <a href="services/electrical/">Electrical</a> • <a href="services/property-maintenance/">Maintenance</a> • <a href="services/outdoor-patio-pool-repair/">Patio &amp; Pool Repair</a> • <a href="services/pool-services/">Pool Services</a></p>
               <p class="help" style="margin:8px 0 0;">This service showcase is fully accessible, easy to navigate, and built to perform smoothly across devices.</p>
             </div>
           </div>
@@ -429,7 +429,11 @@
         </div>
       </div>
 
-      <form class="form" method="post" action="#" aria-describedby="form-note" enctype="multipart/form-data">
+      <form class="form" name="service-request" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" aria-describedby="form-note" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="service-request">
+        <p class="sr-only" hidden>
+          <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+        </p>
         <p id="form-note" class="help">Fields marked required help us respond quickly.</p>
 
         <!-- Contact Info -->
