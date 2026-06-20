@@ -2606,3 +2606,75 @@ input[type="radio"]{
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, rgba(243,179,0,.18), transparent 70%);
 }
+
+/* Featured customer letter / reviews page */
+.review-letter-badge{
+  color:var(--blue-900);
+  letter-spacing:.2px;
+  font-size:.86rem;
+  text-transform:uppercase;
+}
+
+.review-full-link{
+  margin:16px 0 0;
+  font-weight:900;
+}
+
+.review-full-link a{
+  color:var(--blue-800);
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+
+.review-letter{
+  background:
+    radial-gradient(circle at top right, rgba(243,179,0,.14), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.90));
+  border:1px solid rgba(15,43,77,.10);
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow-md);
+  padding:clamp(22px,4vw,44px);
+  position:relative;
+  overflow:hidden;
+}
+
+.review-letter::before{
+  content:"“";
+  position:absolute;
+  top:-22px;
+  right:28px;
+  font-family:var(--font-heading);
+  font-size:9rem;
+  line-height:1;
+  color:rgba(31,86,174,.10);
+  pointer-events:none;
+}
+
+.review-letter blockquote{
+  margin:0;
+  color:var(--slate-700);
+  font-size:1.08rem;
+}
+
+.review-letter blockquote p{
+  margin:0 0 1rem;
+}
+
+.review-letter cite{
+  display:block;
+  margin-top:18px;
+  font-style:normal;
+  font-weight:900;
+  color:var(--blue-900);
+}
+
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+@media (max-width: 900px){
+  .review-grid{ grid-template-columns:1fr; }
+}
