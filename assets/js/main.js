@@ -191,3 +191,56 @@ document.querySelectorAll('.inline-video').forEach((video) => {
     }
   });
 })();
+
+// Submit the Netlify service request form, then personalize the thank-you page.
+(function(){
+  const form = document.querySelector('form[name="service-request"]');
+  if(!form) return;
+
+  const status = form.querySelector('#form-status');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if(!form.reportValidity()) return;
+
+    const firstNameField = form.elements.namedItem('first_name');
+    const firstName = firstNameField && 'value' in firstNameField
+      ? firstNameField.value.trim()
+      : '';
+
+    if(status) status.textContent = 'Submitting your request…';
+    if(submitButton){
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-disabled', 'true');
+      submitButton.dataset.originalText = submitButton.textContent || 'Submit request';
+      submitButton.textContent = 'Submitting…';
+    }
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+
+      if(!response.ok) throw new Error(`Form submission failed with status ${response.status}`);
+
+      const destination = new URL('/thank-you/', window.location.origin);
+      if(firstName) destination.searchParams.set('name', firstName);
+      window.location.assign(destination.toString());
+    } catch (error) {
+      console.error(error);
+      if(status){
+        status.textContent = 'We could not submit your request. Please try again, or call Handy Angels at 442-400-4127.';
+        status.focus?.();
+      }
+      if(submitButton){
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-disabled');
+        submitButton.textContent = submitButton.dataset.originalText || 'Submit request';
+      }
+    }
+  });
+})();

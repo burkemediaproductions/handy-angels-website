@@ -438,12 +438,13 @@
         </div>
       </div>
 
-      <form class="form" name="service-request" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" aria-describedby="form-note" enctype="multipart/form-data" netlify>
+      <form class="form" name="service-request" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" aria-describedby="form-note form-status" enctype="multipart/form-data" netlify>
         <input type="hidden" name="form-name" value="service-request">
         <p class="sr-only" hidden>
           <label>Don’t fill this out if you're human: <input name="bot-field"></label>
         </p>
         <p id="form-note" class="help">Fields marked required help us respond quickly.</p>
+        <p id="form-status" class="help" role="status" aria-live="polite"></p>
 
         <!-- Contact Info -->
         <div class="grid cols-2">
