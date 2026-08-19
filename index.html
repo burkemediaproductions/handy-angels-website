@@ -443,7 +443,7 @@
         <p class="sr-only" hidden>
           <label>Don’t fill this out if you're human: <input name="bot-field"></label>
         </p>
-        <p id="form-note" class="help">Fields marked required help us respond quickly.</p>
+        <p id="form-note" class="help form-note"><strong>Just the basics are required.</strong> Add more details only if you'd like.</p>
         <p id="form-status" class="help" role="status" aria-live="polite"></p>
 
         <!-- Contact Info -->
@@ -469,25 +469,10 @@
           </div>
         </div>
 
-        <div class="field">
-          <label for="contact_method">Preferred Contact Method</label>
-          <select id="contact_method" name="contact_method">
-            <option value="">Please make a selection.</option>
-            <option>Phone Call</option>
-            <option>Text Message</option>
-            <option>Email</option>
-          </select>
-        </div>
-
         <!-- Service Address -->
         <div class="field">
           <label for="address">Street Address <span aria-hidden="true">*</span></label>
           <input id="address" name="address" autocomplete="address-line1" required>
-        </div>
-
-        <div class="field">
-          <label for="address2">Address Line 2</label>
-          <input id="address2" name="address2" autocomplete="address-line2">
         </div>
 
         <div class="grid cols-2">
@@ -501,99 +486,126 @@
           </div>
         </div>
 
-        <!-- Request Details -->
-        <div class="grid cols-2">
-          <div class="field">
-            <label for="type">Type of Property</label>
-            <select id="type" name="type">
-              <option value="">Please make a selection.</option>
-              <option>Primary residence</option>
-              <option>Second home</option>
-              <option>Airbnb / short-term rental</option>
-              <option>Long-term rental</option>
-              <option>Commercial</option>
-            </select>
+        <!-- Optional Request Details -->
+        <details class="more-details">
+          <summary>
+            <span class="more-details-copy">
+              <span class="more-details-title">More Details</span>
+              <span class="more-details-subtitle">Optional — add service details, urgency, property type, photos, and more.</span>
+            </span>
+            <span class="more-details-icon" aria-hidden="true"></span>
+          </summary>
+
+          <div class="more-details-content">
+            <div class="field">
+              <label for="contact_method">Preferred Contact Method</label>
+              <select id="contact_method" name="contact_method">
+                <option value="">Please make a selection.</option>
+                <option>Phone Call</option>
+                <option>Text Message</option>
+                <option>Email</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="address2">Address Line 2</label>
+              <input id="address2" name="address2" autocomplete="address-line2">
+            </div>
+
+            <div class="grid cols-2">
+              <div class="field">
+                <label for="type">Property Type</label>
+                <select id="type" name="type">
+                  <option value="">Please make a selection.</option>
+                  <option>Primary residence</option>
+                  <option>Second home</option>
+                  <option>Airbnb / short-term rental</option>
+                  <option>Long-term rental</option>
+                  <option>Commercial</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service">
+                  <option value="">Please make a selection.</option>
+                  <option>Handyman</option>
+                  <option>Plumbing</option>
+                  <option>Electrical</option>
+                  <option>Painting / Stucco</option>
+                  <option>Kitchen Remodel Support</option>
+                  <option>Hot Water Replacement</option>
+                  <option>Property Maintenance</option>
+                  <option>Landscape / Hardscape</option>
+                  <option>Outdoor Patio</option>
+                  <option>Pool Service</option>
+                  <option>Epoxy Garage Finishes</option>
+                  <option>Emergency Repair</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <fieldset class="field">
+              <legend>Is the repair or service needed an emergency?</legend>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="emergency" value="No">
+                  No
+                </label>
+                <label>
+                  <input type="radio" name="emergency" value="Yes">
+                  Yes
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="urgency">Urgency</label>
+              <select id="urgency" name="urgency">
+                <option value="">Please make a selection.</option>
+                <option>Emergency (today)</option>
+                <option>Soon (this week)</option>
+                <option>Planned (1–4 weeks)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="details">Details of Service Needed</label>
+              <textarea id="details" name="details" placeholder="Describe the issue, the area involved, and anything important our team should know before reaching out."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="photos">Attach Photos</label>
+              <input
+                id="photos"
+                name="photos"
+                type="file"
+                accept=".jpg,.gif,.png,.jpeg,.bmp"
+                multiple>
+              <p class="help field-help">Accepted file types: jpg, gif, png, jpeg, bmp. Max. file size: 4 MB. Max. files: 6.</p>
+            </div>
+
+            <div class="field">
+              <label for="coupon">Coupon Code</label>
+              <input id="coupon" name="coupon">
+            </div>
           </div>
+        </details>
 
-          <div class="field">
-            <label for="service">Service needed</label>
-            <select id="service" name="service">
-              <option value="">Please make a selection.</option>
-              <option>Handyman</option>
-              <option>Plumbing</option>
-              <option>Electrical</option>
-              <option>Painting / Stucco</option>
-              <option>Kitchen Remodel Support</option>
-              <option>Hot Water Replacement</option>
-              <option>Property Maintenance</option>
-              <option>Landscape / Hardscape</option>
-              <option>Outdoor Patio</option>
-              <option>Pool Service</option>
-              <option>Epoxy Garage Finishes</option>
-              <option>Emergency Repair</option>
-              <option>Other</option>
-            </select>
-          </div>
+        <div class="field consent-field">
+          <label for="consent" class="consent-row">
+            <input id="consent" name="consent" type="checkbox" required>
+            <span>I certify that I am the owner or owner's agent of above property. <span aria-hidden="true">*</span></span>
+          </label>
         </div>
-
-        <fieldset class="field">
-          <legend>Is the repair or service needed an emergency?</legend>
-          <div class="radio-group" style="display:flex; gap:18px; flex-wrap:wrap;">
-            <label>
-              <input type="radio" name="emergency" value="No">
-              No
-            </label>
-            <label>
-              <input type="radio" name="emergency" value="Yes" required>
-              Yes
-            </label>
-          </div>
-        </fieldset>
-
-        <div class="field">
-          <label for="urgency">Urgency</label>
-          <select id="urgency" name="urgency">
-            <option value="">Please make a selection.</option>
-            <option>Emergency (today)</option>
-            <option>Soon (this week)</option>
-            <option>Planned (1–4 weeks)</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="details">Details of service needed</label>
-          <textarea id="details" name="details" placeholder="Describe the issue, the area involved, and anything important our team should know before reaching out."></textarea>
-        </div>
-
-        <div class="field">
-          <label for="photos">If you have photos, you can attach here.</label>
-          <input
-            id="photos"
-            name="photos"
-            type="file"
-            accept=".jpg,.gif,.png,.jpeg,.bmp"
-            multiple>
-          <p class="help">Accepted file types: jpg, gif, png, jpeg, bmp. Max. file size: 4 MB. Max. files: 6.</p>
-        </div>
-
-        <div class="field">
-          <label for="coupon">Coupon Code</label>
-          <input id="coupon" name="coupon">
-        </div>
-
-		<div class="field">
-		  <label for="consent" class="consent-row">
-			<input id="consent" name="consent" type="checkbox" required>
-			<span>I certify that I am the owner or owner's agent of above property.</span>
-		  </label>
-		</div>
 
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Submit request</button>
-          <a class="btn btn-ghost" href="contact/">Contact options</a>
+          <button class="btn btn-primary" type="submit">Submit Request</button>
+          <a class="btn btn-ghost" href="contact/">Contact Options</a>
         </div>
 
-        <p class="help">By submitting, you agree to be contacted about your request in accordance with our privacy practices.</p>
+        <p class="help form-privacy">By submitting, you agree to be contacted about your request in accordance with our privacy practices.</p>
       </form>
     </div>
   </div>
